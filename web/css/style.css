@@ -1,0 +1,34 @@
+.flex{
+    display: flex;
+}
+.flex-column{
+    flex-direction: column;
+}
+.form {
+    width: 45%;
+    margin: 0 auto;
+}
+.form label{
+    margin: 20px 0 10px;
+    font-size: 1.2em;
+}
+.btn-success{
+    background-color: green;
+    color: white;
+}
+.btn-sky{
+    background-color: skyblue;
+    color: black;
+}
+.form input[type="submit"]{
+    margin: 10px 0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+
+    font-weight: 700;
+    box-shadow: 1px 1px 5px gray;
+}
+.form input{
+    padding: 5px;
+}
