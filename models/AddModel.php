@@ -50,6 +50,9 @@ class AddModel extends \PDO
             }
             $str = implode(' and ',$arr);
         } else {
+            if( empty($select[2]) ){
+                return false;
+            }
             $str = $select[1] . ' ' . $select[0] . "(" . implode(',' ,$select[2]) . ")";
         }
 
