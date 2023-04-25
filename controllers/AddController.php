@@ -14,7 +14,7 @@ class AddController
     {
         $this->request_url = $_SERVER['REQUEST_URI'];
         $this->isPost = $_SERVER['REQUEST_METHOD'] == 'POST';
-        $this->isAjax = $_SERVER['REQUEST_METHOD'] == 'POST';
+        $this->isAjax = isset($_SERVER['HTTP_X_REQUESTED_WITH']);
     }
 
     public function init(String $action)
@@ -41,7 +41,7 @@ class AddController
         (new  $class())->init($answer['action']);
     }
 
-    public function render(String $view)
+    public function render(String $view, $params = [])
     {
         $str = explode('\\',get_called_class());
         $str = $str[count($str) - 1];
@@ -56,6 +56,17 @@ class AddController
             $content = APP . '/error/404.php';
         }
         include $layouts;
+    }
+
+    public function renderAjax(string $view, $params = [])
+    {
+        $str = explode('\\',get_called_class());
+        $str = $str[count($str) - 1];
+        $str = strtolower(substr($str, 0, strpos($str, 'Controller')));
+        $file = APP . '/views/' . $str. '/' . $view . '.php';
+        if( file_exists($file) ){
+            include $file;
+        }
     }
 
     public function redirect(Array $url)

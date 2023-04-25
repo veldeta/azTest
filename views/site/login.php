@@ -1,4 +1,4 @@
-<form action="<?= $_SERVER['REQUEST_URI']?>" method="post">
+<form id="login-form" action="<?= $_SERVER['REQUEST_URI']?>" method="post">
     <div class="form">
         <input type="hidden" name="__cfds" value="<?= $_SESSION['__cfds']?>">
         <div class="flex flex-column">

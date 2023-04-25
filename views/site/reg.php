@@ -3,7 +3,7 @@
         <input type="hidden" value="<?= $_SESSION['__cfds']?>">
         <div class="flex flex-column">
             <label>Логин</label>
-            <input type="text" name="name" required>
+            <input type="text" name="login" required>
         </div>
         <div class="flex flex-column">
             <label>Email</label>
@@ -11,7 +11,7 @@
         </div>
         <div class="flex flex-column">
             <label>Пароль</label>
-            <input type="password" name="pass" required>
+            <input type="password" name="password" required>
         </div>
         <div class="flex flex-column">
             <label>Подтверждения пароля</label>
